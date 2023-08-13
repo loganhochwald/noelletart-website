@@ -1,9 +1,18 @@
 import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+
+import Header from './Global/Header/Header';
+import Artwork from './pages/Artwork/Artwork';
 
 const App = () => {
 
   return (
-    <p>Hi Noelle, React is Working!</p>
+    <>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Artwork />} />
+      </Routes>
+    </>
   );
 };
 
