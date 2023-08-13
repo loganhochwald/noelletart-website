@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import setupMiddleware from './middleware';
 
 // load variables from .env file
 dotenv.config();
@@ -8,16 +9,10 @@ dotenv.config();
 const app = express();
 const port = 4200;
 
-// middleware
-// parses incoming JSON
-app.use(express.json());
-
-// shows message until client side is built
-app.get('/', (req, res) => {
-  res.send('Hello Noelle!');
-});
+// Call the setupMiddleware function and pass the app instance
+setupMiddleware(app);
 
 // start express server
 app.listen(port, () => {
-  console.log(`Https server listening on port ${port}`);
+  console.log(`Server listening on port ${port}`);
 });
