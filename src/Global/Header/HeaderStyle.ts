@@ -22,6 +22,7 @@ export const LinksWrapper = styled.div`
 export const LinkItem = styled.h3`
   text-decoration: none;
   font-weight: bold;
+  cursor: pointer;
 `;
 
 module.exports = {
