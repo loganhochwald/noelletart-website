@@ -1,9 +1,16 @@
-import React from 'react';
+import React from "react";
+import ArtPiece from "./ArtPiece";
+import { pictures } from './examplePictures';
+
+import { ArtGridContainer } from './ArtworkStyle';
 
 const Artwork = () => {
-
   return (
-    <p>This is the Artwork, with grids of pictures.</p>
+    <ArtGridContainer>
+      {pictures.map((picture, index) => (
+        <ArtPiece key={index} src={picture} />
+      ))}
+    </ArtGridContainer>
   );
 };
 
