@@ -9,6 +9,7 @@ export const HeaderWrapper = styled.header`
 
 export const HeaderTitle = styled.h1`
   margin: 0;
+  font-size: 3rem;
 `;
 
 export const LinksWrapper = styled.div`
@@ -16,13 +17,13 @@ export const LinksWrapper = styled.div`
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  margin-top: 1rem;
 `;
 
 export const LinkItem = styled.h3`
   text-decoration: none;
   font-weight: bold;
   cursor: pointer;
+  text-decoration: underline;
 `;
 
 module.exports = {
