@@ -21,17 +21,17 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)$/,
+        test: /\.(ts|tsx|js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader?cacheDirectory",
-        options: {
-          presets: [
-            ['@babel/preset-env', { targets: "defaults" }]
-          ],
-          plugins: ['@babel/plugin-proposal-class-properties'],
-          cacheDirectory: true
-        }
+          loader: "babel-loader",
+          options: {
+            presets: [
+              '@babel/preset-env',
+              '@babel/preset-react',
+              '@babel/preset-typescript',
+            ],
+          },
         },
       },
     ],
