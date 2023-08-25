@@ -25,10 +25,3 @@ export const LinkItem = styled.h3`
   cursor: pointer;
   text-decoration: underline;
 `;
-
-module.exports = {
-  HeaderWrapper,
-  HeaderTitle,
-  LinksWrapper,
-  LinkItem
-}
