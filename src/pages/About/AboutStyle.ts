@@ -1,11 +1,18 @@
 import styled from 'styled-components';
 
 const AboutGridContainer = styled.div`
-  display: grid;
+display: grid;
+grid-template-columns: 1fr;
+grid-template-rows: repeat(2, 1fr);
+grid-row-gap: 0px;
+border: 1px solid #ccc;
 `;
 
 const AboutImageContainer = styled.div`
 align-items: center;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: 1fr;
 border: 1px solid #ccc;
 padding: 20px;
 margin: 10px;
@@ -18,8 +25,18 @@ const NoelleImage = styled.img`
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 `;
 
+const AboutBioContainer = styled.div`
+border: 1px solid #ccc;
+padding: 20px;
+margin: 10px;
+display: grid;
+grid-template-columns: 1fr;
+grid-template-rows: repeat(2, 1fr);
+`
+
 export {
   AboutGridContainer,
   AboutImageContainer,
-  NoelleImage
+  NoelleImage,
+  AboutBioContainer,
 }
