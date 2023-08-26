@@ -26,12 +26,10 @@ const NoelleImage = styled.img`
 `;
 
 const AboutBioContainer = styled.div`
+text-align: center;
 border: 1px solid #ccc;
 padding: 20px;
 margin: 10px;
-display: grid;
-grid-template-columns: 1fr;
-grid-template-rows: repeat(2, 1fr);
 `
 
 export {
