@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "netlify",
+    "start": "netlify dev",
     "dev": "npm run dev:client",
     "dev:client": "webpack -c webpack.config.js -w",
     "build": "npm run build:client",
