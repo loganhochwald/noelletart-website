@@ -27,7 +27,7 @@ export const LinkItem = styled.h3`
   text-decoration: underline;
 
   &:hover {
-    color:#f00;
+    color:#006e90;
     transition: all 0.3s ease;
   }
 `;

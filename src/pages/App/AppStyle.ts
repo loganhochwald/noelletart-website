@@ -5,6 +5,7 @@ margin: 2rem;
 max-width: 800px;
 margin: auto;
 font-family: 'Nanum Gothic', sans-serif;
+background-color: #fae3e8;
 `
 
 export const RoutesContainer = styled.div`
