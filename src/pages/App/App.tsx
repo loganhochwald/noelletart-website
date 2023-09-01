@@ -1,20 +1,14 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { styled } from 'styled-components';
+import { AppContainer, RoutesContainer } from './AppStyle';
 
-import Header from './Global/Header/Header';
-import Artwork from './pages/Artwork/Artwork';
-import About from './pages/About/About';
-import Contact from './pages/Contact/Contact';
-import ArtZoomed from './pages/Artwork/ArtZoomed';
+import Header from '../../Global/Header/Header';
+import Artwork from '../Artwork/Artwork';
+import About from '../About/About';
+import Contact from '../Contact/Contact';
+import ArtZoomed from '../Artwork/ArtZoomed';
 
-const AppContainer = styled.div`
-margin: 2rem;
-`
 
-const RoutesContainer = styled.div`
-margin: 1rem;
-`
 
 const App = () => {
 

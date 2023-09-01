@@ -24,4 +24,9 @@ export const LinkItem = styled.h3`
   font-weight: bold;
   cursor: pointer;
   text-decoration: underline;
+
+  &:hover {
+    color:#f00;
+    transition: all 0.3s ease;
+  }
 `;
