@@ -13,7 +13,7 @@ const port = 4200;
 app.use('/aws', AWS);
 
 // Call the setupMiddleware function and pass the app instance
-setupMiddleware(app);
+// setupMiddleware(app);
 
 // start express server
 app.listen(port, () => {
