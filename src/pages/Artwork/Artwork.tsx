@@ -10,10 +10,12 @@ const Artwork = () => {
   useEffect(() => {
     axios.get('aws/images')
     .then((images) => {
+      console.log("the data: ", images.data);
+      console.log("the images object: ", images);
       setPictures(images.data);
     })
     .catch((error) => {
-      console.error(error);
+      console.error("Could not get S3 Images", error);
     })
   }, [])
 
