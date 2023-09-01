@@ -5,19 +5,19 @@ import ArtPiece from "./ArtPiece";
 import { ArtGridContainer } from './ArtworkStyle';
 
 const Artwork = () => {
-  const [pictures, setPictures] = useState([]);
+  const [pictures, setPictures] = useState<string[]>([]);
 
   useEffect(() => {
-    axios.get('aws/images')
-    .then((images) => {
-      console.log("the data: ", images.data);
-      console.log("the images object: ", images);
-      setPictures(images.data);
-    })
-    .catch((error) => {
-      console.error("Could not get S3 Images", error);
-    })
-  }, [])
+    axios.get('/.netlify/functions/S3-config')
+      .then((response) => {
+        if(Array.isArray(response.data)) {
+          setPictures(response.data);
+        }
+      })
+      .catch((error) => {
+        console.error("Could not get S3 Images", error);
+      })
+  }, [])  
 
 
   return (
