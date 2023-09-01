@@ -19,5 +19,6 @@ export const ArtZoomedTitle = styled.h2`
 `;
 
 export const ArtZoomedButton = styled.button`
-margin-top: 0.5rem
+margin-top: 0.5rem;
+cursor: pointer;
 `
