@@ -10,10 +10,10 @@ const ArtPiece: React.FC<ArtPieceProps> = ({ src }) => {
   const navigate = useNavigate();
 
   const zoomIn = (picture: string) => {
-    console.log("Image clicked:", picture);
-    navigate(`/artpiece/${encodeURIComponent(picture)}`);
+    const imageFilename = picture.split('/').pop() || '';
+    const imageTitle = imageFilename.replace(/\.[^.]+$/, '');  
+    navigate(`/artpiece/${imageTitle}`, { state: { pictureURL: picture, title: imageTitle } });
   }
-
 
   return (
     <ArtPieceContainer>
