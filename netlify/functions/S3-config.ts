@@ -20,10 +20,10 @@ type ClientConfig = {
 
 // Annotate the client variable
 const client = new S3Client({
-  region: process.env.AWS_BUCKET_REGION!,
+  region: process.env.S3_BUCKET_REGION!,
   credentials: {
-    accessKeyId: process.env.AWS_ACCESS_KEY!,
-    secretAccessKey: process.env.AWS_SECRET_KEY!,
+    accessKeyId: process.env.S3_ACCESS_KEY!,
+    secretAccessKey: process.env.S3_SECRET_KEY!,
   },
 } as ClientConfig);
 
@@ -46,7 +46,7 @@ const main = async () => {
 
       const contentsList = Contents?.map(
         (c) =>
-          `https://${process.env.AWS_BUCKET_NAME}.s3.amazonaws.com/${c.Key}`
+          `https://${process.env.S3_BUCKET_NAME}.s3.amazonaws.com/${c.Key}`
       );
 
       if (contentsList) {
