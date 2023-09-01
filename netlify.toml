@@ -3,3 +3,9 @@
   to = "/index.html"
   status = 200
   force = false
+
+  [dev]
+  publish = "dist/client"
+
+  [build]
+  command = "npm run dev"
