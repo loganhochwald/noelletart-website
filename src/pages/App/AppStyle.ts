@@ -1,11 +1,18 @@
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
+
+export const GlobalStyles = createGlobalStyle`
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #fae3e8;
+  }
+`;
 
 export const AppContainer = styled.div`
-margin: 2rem;
-max-width: 800px;
+max-width: 80%;
 margin: auto;
 font-family: 'Nanum Gothic', sans-serif;
-background-color: #fae3e8;
+background-color: #fcfcff;
 `
 
 export const RoutesContainer = styled.div`

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { AppContainer, RoutesContainer } from './AppStyle';
+import { AppContainer, RoutesContainer, GlobalStyles } from './AppStyle';
 
 import Header from '../../Global/Header/Header';
 import Artwork from '../Artwork/Artwork';
@@ -13,6 +13,8 @@ import ArtZoomed from '../Artwork/ArtZoomed';
 const App = () => {
 
   return (
+    <div>
+    <GlobalStyles />
     <AppContainer>
       <Header />
       <RoutesContainer>
@@ -24,6 +26,7 @@ const App = () => {
       </Routes>
       </RoutesContainer>
     </AppContainer>
+    </div>
   );
 };
 
