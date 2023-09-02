@@ -4,8 +4,8 @@ export const HeaderWrapper = styled.header`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem 0;
-  padding-top: 3rem;
+  padding-top: 4rem;
+  padding-bottom: 1rem;
 `;
 
 export const HeaderTitle = styled.h1`

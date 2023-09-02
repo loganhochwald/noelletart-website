@@ -16,7 +16,6 @@ const Header = () => {
       <LinksWrapper>
         <LinkItem onClick={() => navigateTo('/')}>ARTWORK</LinkItem>
         <LinkItem onClick={() => navigateTo('/about')}>ABOUT</LinkItem>
-        <LinkItem onClick={() => navigateTo('/contact')}>CONTACT</LinkItem>
       </LinksWrapper>
     </HeaderWrapper>
   );
