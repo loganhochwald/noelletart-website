@@ -5,6 +5,7 @@ export const HeaderWrapper = styled.header`
   flex-direction: column;
   align-items: center;
   padding: 2rem 0;
+  padding-top: 3rem;
 `;
 
 export const HeaderTitle = styled.h1`

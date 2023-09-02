@@ -14,9 +14,9 @@ const Header = () => {
     <HeaderWrapper>
       <HeaderTitle>Noelle T Art</HeaderTitle>
       <LinksWrapper>
-        <LinkItem onClick={() => navigateTo('/')}>Artwork</LinkItem>
-        <LinkItem onClick={() => navigateTo('/about')}>About</LinkItem>
-        <LinkItem onClick={() => navigateTo('/contact')}>Contact</LinkItem>
+        <LinkItem onClick={() => navigateTo('/')}>ARTWORK</LinkItem>
+        <LinkItem onClick={() => navigateTo('/about')}>ABOUT</LinkItem>
+        <LinkItem onClick={() => navigateTo('/contact')}>CONTACT</LinkItem>
       </LinksWrapper>
     </HeaderWrapper>
   );
