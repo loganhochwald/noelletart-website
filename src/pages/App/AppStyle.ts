@@ -11,8 +11,9 @@ export const GlobalStyles = createGlobalStyle`
 export const AppContainer = styled.div`
 max-width: 80%;
 margin: auto;
-font-family: 'Nanum Gothic', sans-serif;
+font-family: 'Consolas', monospace;
 background-color: #fcfcff;
+box-shadow: 0 2px 4px rgb(0 0 0 / 61%);
 `
 
 export const RoutesContainer = styled.div`

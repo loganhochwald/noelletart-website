@@ -10,7 +10,7 @@ export const HeaderWrapper = styled.header`
 export const HeaderTitle = styled.h1`
   margin: 0;
   font-size: 3rem;
-  font-family: 'Segoe Script', cursive;
+  font-family: 'Consolas', monospace;
 `;
 
 export const LinksWrapper = styled.div`
