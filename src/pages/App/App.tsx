@@ -8,7 +8,6 @@ import About from '../About/About';
 import ArtZoomed from '../Artwork/ArtZoomed';
 
 
-
 const App = () => {
 
   return (
@@ -19,6 +18,9 @@ const App = () => {
       <RoutesContainer>
       <Routes>
         <Route path="/" element={<Artwork />} />
+        <Route path="/live-paintings" element={<Artwork />} />
+        <Route path="/abstracts" element={<Artwork />} />
+        <Route path="/set-pieces" element={<Artwork />} />
         <Route path="/about" element={<About />} />
         <Route path="/artpiece/:imageUrl" element={<ArtZoomed />} />
       </Routes>

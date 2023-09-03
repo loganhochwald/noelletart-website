@@ -12,6 +12,7 @@ export const HeaderTitle = styled.h1`
   margin: 0;
   font-size: 4rem;
   font-family: 'Consolas', monospace;
+  cursor: default;
 `;
 
 export const LinksWrapper = styled.div`
