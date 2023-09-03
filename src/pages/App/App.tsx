@@ -7,6 +7,7 @@ import Artwork from '../Artwork/Artwork';
 import About from '../About/About';
 import ArtZoomed from '../Artwork/ArtZoomed';
 
+import ScrollToTopButton from '../../ScrollToTop';
 
 const App = () => {
 
@@ -26,6 +27,7 @@ const App = () => {
       </Routes>
       </RoutesContainer>
     </AppContainer>
+    <ScrollToTopButton />
     </div>
   );
 };
