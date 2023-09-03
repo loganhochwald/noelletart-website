@@ -1,6 +1,5 @@
 import {
   S3Client,
-  // This command supersedes the ListObjectsCommand and is the recommended way to list objects.
   ListObjectsV2Command,
   ListObjectsV2CommandOutput,
 } from "@aws-sdk/client-s3";
@@ -37,29 +36,28 @@ const main = async () => {
 
   try {
     let isTruncated = true;
-    // let contents = "";
-    let contentsArray: (string | undefined)[] = [];
+    let contents: (string | undefined)[] = [];
 
     while (isTruncated) {
       const response: ListObjectsV2CommandOutput = await client.send(command);
       const { Contents, IsTruncated, NextContinuationToken } = response;
 
-      const contentsList = Contents?.map(
-        (c) =>
-          `https://${process.env.S3_BUCKET_NAME}.s3.amazonaws.com/${c.Key}`
-      );
+      const contentsList = Contents?.map((c) => {
+        if (c.Key?.charAt(c.Key?.length - 1) !== '/') {
+          return `https://${process.env.S3_BUCKET_NAME}.s3.amazonaws.com/${c.Key}`;
+        }
+      }).filter((item) => item !== undefined && item !== null);
+      
 
       if (contentsList) {
-        // contents += contentsList + "\n";
-        contentsArray = contentsList;
+        contents = contentsList;
       }
 
       isTruncated = IsTruncated!;
       command.input.ContinuationToken = NextContinuationToken;
     }
 
-    // return(contents);
-    return contentsArray;
+    return contents;
   } catch (err) {
     console.error(err);
   }
