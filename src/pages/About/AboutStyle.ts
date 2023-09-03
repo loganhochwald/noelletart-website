@@ -1,18 +1,14 @@
 import styled from 'styled-components';
 
 const AboutGridContainer = styled.div`
-display: grid;
-grid-template-columns: 1fr;
+display: flex;
 border: 1px solid #ccc;
 `;
 
 const AboutImageContainer = styled.div`
-align-items: center;
-display: grid;
-grid-template-rows: 1fr;
+align-items: baseline;
+display: flex;
 border: 1px solid #ccc;
-padding: 20px;
-margin: 10px;
 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 justify-items: center;
 text-align: justify;
@@ -25,10 +21,8 @@ const NoelleImage = styled.img`
 `;
 
 const AboutBioContainer = styled.div`
-text-align: center;
-border: 1px solid #ccc;
-padding: 20px;
-margin: 10px;
+max-width: 50%;
+text-align: justify;
 `
 
 export {
