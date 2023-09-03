@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <HeaderWrapper>
-      <HeaderTitle>Noelle T Art</HeaderTitle>
+      <HeaderTitle>Noelle T. Art</HeaderTitle>
       <LinksWrapper>
       <LinkItem key='rec' onClick={() => navigateTo('/')}>RECENT</LinkItem>
       {menuLinks.map((link) => {
