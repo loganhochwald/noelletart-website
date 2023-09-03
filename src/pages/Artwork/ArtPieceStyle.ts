@@ -21,4 +21,5 @@ export const ArtPieceImage = styled.img`
 export const ArtPieceTitle = styled.p`
 margin-top: 1.5rem;
 margin-bottom: 0rem;
+text-align: center;
 `

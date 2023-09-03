@@ -7,7 +7,7 @@ export const ArtZoomedContainer = styled.div`
 `;
 
 export const ArtZoomedImage = styled.img`
-  max-width: 100%;
+  max-width: 70%;
   height: auto;
   border: 1px solid #ccc;
   padding: 20px;
@@ -16,6 +16,7 @@ export const ArtZoomedImage = styled.img`
 `;
 
 export const ArtZoomedTitle = styled.h2`
+text-align: center;
 `;
 
 export const ArtZoomedButton = styled.button`
