@@ -14,6 +14,7 @@ margin: auto;
 font-family: 'Consolas', monospace;
 background-color: #fcfcff;
 box-shadow: 0 2px 4px rgb(0 0 0 / 61%);
+min-height: 100vh;
 `
 
 export const RoutesContainer = styled.div`
