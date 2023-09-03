@@ -1,14 +1,25 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useLocation } from "react-router-dom";
 
 import ArtPiece from "./ArtPiece";
 import { ArtGridContainer } from './ArtworkStyle';
 
 const Artwork = () => {
+  const location = useLocation();
+
   const [pictures, setPictures] = useState<string[]>([]);
 
   useEffect(() => {
-    axios.get('/.netlify/functions/S3-config')
+
+    let endpoint = location.pathname;
+
+    // NEEDS TO CHANGE ONCE RECENT IS DETERMINED
+    if(endpoint === '/') {
+      endpoint = 'live-paintings';
+    }
+
+    axios.get(`/.netlify/functions/${ endpoint }`)
       .then((response) => {
         if(Array.isArray(response.data)) {
           setPictures(response.data);
@@ -17,7 +28,7 @@ const Artwork = () => {
       .catch((error) => {
         console.error("Could not get S3 Images", error);
       })
-  }, [])  
+  }, [location])  
 
 
   return (

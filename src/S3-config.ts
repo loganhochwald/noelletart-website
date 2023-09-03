@@ -26,9 +26,10 @@ const client = new S3Client({
   },
 } as ClientConfig);
 
-const main = async () => {
+export const main = async (prefix: string) => {
   const command = new ListObjectsV2Command({
     Bucket: "noelletart",
+    Prefix: prefix
     // The default and maximum number of keys returned is 1000. This limits it to
     // one for demonstration purposes.
     //   MaxKeys: 1,
@@ -63,19 +64,3 @@ const main = async () => {
   }
 };
 
-
-export const handler = async () => {
-    try {
-      const answer = await main();
-      return {
-        statusCode: 200,
-        body: JSON.stringify(answer),
-      };
-    } catch (err) {
-      console.error(err);
-      return {
-        statusCode: 500,
-        body: JSON.stringify({ error: 'There was an error getting the image URLs' }),
-      };
-    }
-  };
