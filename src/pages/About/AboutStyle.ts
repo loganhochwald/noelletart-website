@@ -2,17 +2,21 @@ import styled from 'styled-components';
 
 const AboutGridContainer = styled.div`
 display: flex;
+flex-direction: row;
+align-items: flex-start;
 border: 1px solid #ccc;
+padding: 20px;
+max-width: 100%;
+box-sizing: border-box;
+flex-wrap: wrap;
 `;
 
 const AboutImageContainer = styled.div`
-align-items: baseline;
-display: flex;
-border: 1px solid #ccc;
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-justify-items: center;
-text-align: justify;
-`
+max-width: 100%;
+height: auto;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+flex: 1;
+`;
 
 const NoelleImage = styled.img`
   max-width: 100%;
@@ -21,9 +25,9 @@ const NoelleImage = styled.img`
 `;
 
 const AboutBioContainer = styled.div`
-max-width: 50%;
-text-align: justify;
-`
+flex: 2;
+padding: 0 20px;
+`;
 
 export {
   AboutGridContainer,
