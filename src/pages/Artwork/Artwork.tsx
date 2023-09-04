@@ -14,9 +14,8 @@ const Artwork = () => {
 
     let endpoint = location.pathname;
 
-    // NEEDS TO CHANGE ONCE RECENT IS DETERMINED
     if(endpoint === '/') {
-      endpoint = 'live-paintings';
+      endpoint = 'recent';
     }
 
     axios.get(`/.netlify/functions/${ endpoint }`)
