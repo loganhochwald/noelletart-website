@@ -19,6 +19,7 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: path.resolve(srcDir, "index.html"),
       inject: "body",
+      favicon: "./src/favicon.ico"
     })],
   module: {
     rules: [
