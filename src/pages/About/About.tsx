@@ -20,7 +20,7 @@ const About = () => {
       </AboutBioContainer>
       <AboutContAndInfoContainer>
       <VIEWCV><UnderlinedText>VIEW CV</UnderlinedText></VIEWCV>
-      <ContactInfo>INSTAGRAM: <UnderlinedLink href="https://www.instagram.com/noelletart">@noelletart</UnderlinedLink></ContactInfo>
+      <ContactInfo>INSTAGRAM: <UnderlinedLink href="https://www.instagram.com/noelle.tart">@noelletart</UnderlinedLink></ContactInfo>
       <ContactInfo>EMAIL: <UnderlinedLink href="mailto:noelletart@gmail.com">noelletart@gmail.com</UnderlinedLink></ContactInfo>
     </AboutContAndInfoContainer>
       </AboutInfoContainer>
