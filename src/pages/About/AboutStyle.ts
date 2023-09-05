@@ -42,6 +42,7 @@ justify-content: space-between;
 `;
 
 const AboutBioContainer = styled.div`
+text-align: justify;
 `;
 
 const AboutContAndInfoContainer = styled.div`
