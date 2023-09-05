@@ -38,6 +38,15 @@ export const LinkItem = styled.h3`
   }
 `;
 
+export const CurrentLinkItem = styled.h3`
+font-weight: bold;
+cursor: pointer;
+text-decoration: underline;
+margin: 1rem;
+text-align: center;
+color: #006e90;
+`
+
 const rotateAnimation = keyframes`
   0% {
     border-width: 10px;
