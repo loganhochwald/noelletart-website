@@ -51,6 +51,7 @@ const AboutContAndInfoContainer = styled.div`
 const VIEWCV = styled.div`
 text-align: center;
 margin: 2rem;
+cursor: pointer;
 `;
 
 const ContactInfo = styled.div`
