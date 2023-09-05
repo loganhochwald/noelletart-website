@@ -43,15 +43,24 @@ export const main = async (prefix: string) => {
       const response: ListObjectsV2CommandOutput = await client.send(command);
       const { Contents, IsTruncated, NextContinuationToken } = response;
 
+      // array of objects with title and last modified
       const contentsList = Contents?.map((c) => {
-        if (c.Key?.charAt(c.Key?.length - 1) !== '/') {
-          return `https://${process.env.S3_BUCKET_NAME}.s3.amazonaws.com/${c.Key}`;
-        }
-      }).filter((item) => item !== undefined && item !== null);
+        if (c.Key?.charAt(c.Key?.length - 1) !== '/' && c.LastModified) {
+          return {
+            url: `https://${process.env.S3_BUCKET_NAME}.s3.amazonaws.com/${c.Key}`,
+            lastModified: new Date(c.LastModified), // Convert LastModified to a Date object
+          };
+        } // filter out any undefined or null
+      }).filter((item) => item !== undefined && item !== null) as { url: string; lastModified: Date }[]; // Explicitly specify the type of contentsList
       
-
+      // sort the array by Last Modified in descending order (most recent to least recent)
+      contentsList.sort((a, b) => b.lastModified.getTime() - a.lastModified.getTime()); // Use getTime() to compare Date objects
+      
+      // getting the list of urls only from the sorted contentsList
+      const sortedUrls = contentsList.map((item) => item.url);
+            
       if (contentsList) {
-        contents = contentsList;
+        contents = sortedUrls;
       }
 
       isTruncated = IsTruncated!;
