@@ -31,7 +31,7 @@ module.exports = {
         },
       },
       {
-        test: /\.(png|jpe?g|gif|jp2|webp)$/i,
+        test: /\.(png|jpe?g|gif|jp2|webp|pdf)$/i,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
