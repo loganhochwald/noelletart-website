@@ -6,4 +6,9 @@ export const ArtGridContainer = styled.div`
   margin: 0 2rem;
   justify-content: center;
   align-items: flex-start;
+
+  
+  @media (max-width: 20rem) {
+    grid-template-columns: 1fr;
+  }
   `;
