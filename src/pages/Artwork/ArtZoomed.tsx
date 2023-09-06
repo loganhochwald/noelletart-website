@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-import { ArtZoomedContainer, ArtZoomedImage, ArtZoomedTitle, ArtZoomedButton } from "./ArtZoomedStyle";
+import { ArtZoomedContainer, ArtZoomedImage, ArtZoomedTitle, ReturnButton } from "./ArtZoomedStyle";
 
 const ArtZoomed = () => {
   const navigate = useNavigate();
@@ -10,12 +10,13 @@ const ArtZoomed = () => {
   const location = useLocation();
   const url = location.state?.pictureURL;
   const imageTitle = location.state?.title;
+  const endpoint = location.state?.endpoint;
 
   return (
       <ArtZoomedContainer>
         <ArtZoomedImage src={url}/>
         <ArtZoomedTitle>{imageTitle}</ArtZoomedTitle>
-        <ArtZoomedButton onClick={() => navigate('/')}>Return to Gallery</ArtZoomedButton>
+        <ReturnButton onClick={() => navigate(endpoint)}>Return</ReturnButton>
       </ArtZoomedContainer>
   );
 };
