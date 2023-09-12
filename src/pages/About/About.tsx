@@ -5,6 +5,8 @@ import { AboutGridContainer, AboutImageContainer, NoelleImage, AboutInfoContaine
 import noelle from './Noelle-Headshot.webp';
 import cv from './Noelle-CV.pdf';
 
+import Bio from './Bio';
+
 const About = () => {
 
   const openPdf = () => {
@@ -18,10 +20,7 @@ const About = () => {
       </AboutImageContainer>
       <AboutInfoContainer>
       <AboutBioContainer>
-        NOELLE TOLLETT is an emerging interdisciplinary painter based in New Orleans, LA. Originally from Baton Rouge, LA,
-        she graduated magna cum laude from Louisiana State University, earning her Bachelor's of Fine Arts in Studio Art with 
-        a concentration in Painting and Drawing. Since moving to New Orleans, Noelle teaches children's art classes, live 
-        paints at music shows, and volunteers as a set designer and performer with AquaMob New Orleans.
+        <Bio />
       </AboutBioContainer>
       <AboutContAndInfoContainer>
       <VIEWCV onClick={openPdf}><UnderlinedText>VIEW CV</UnderlinedText></VIEWCV>
