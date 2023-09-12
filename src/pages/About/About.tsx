@@ -13,6 +13,10 @@ const About = () => {
     window.open(cv, '_blank');
   };
 
+  const openS3Pdf = () => {
+    window.open('https://noelletart.s3.amazonaws.com/cv.pdf');
+  }
+
   return (
     <AboutGridContainer>
       <AboutImageContainer>
@@ -23,7 +27,7 @@ const About = () => {
         <Bio />
       </AboutBioContainer>
       <AboutContAndInfoContainer>
-      <VIEWCV onClick={openPdf}><UnderlinedText>VIEW CV</UnderlinedText></VIEWCV>
+      <VIEWCV onClick={openS3Pdf}><UnderlinedText>VIEW CV</UnderlinedText></VIEWCV>
       <ContactInfo>INSTAGRAM: <UnderlinedLink href="https://www.instagram.com/noelle.tart">@noelletart</UnderlinedLink></ContactInfo>
       <ContactInfo>EMAIL: <UnderlinedLink href="mailto:noelletart@gmail.com">noelletart@gmail.com</UnderlinedLink></ContactInfo>
     </AboutContAndInfoContainer>
