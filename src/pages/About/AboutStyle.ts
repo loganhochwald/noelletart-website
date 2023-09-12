@@ -4,8 +4,8 @@ const breakpoint = '1000px';
 
 const AboutGridContainer = styled.div`
 display: flex;
-flex-direction: row;
 padding: 2rem;
+padding-top: 0rem;
 max-width: 900px;
 box-sizing: border-box;
 flex-wrap: wrap;
@@ -45,6 +45,12 @@ const AboutBioContainer = styled.div`
 text-align: justify;
 `;
 
+const AboutStatementContainer = styled.div`
+text-align: justify;
+margin-bottom: 2rem;
+white-space: pre-line;
+`;
+
 const AboutContAndInfoContainer = styled.div`
 `;
 
@@ -73,6 +79,7 @@ export {
   NoelleImage,
   AboutInfoContainer,
   AboutBioContainer,
+  AboutStatementContainer,
   AboutContAndInfoContainer,
   VIEWCV,
   ContactInfo,

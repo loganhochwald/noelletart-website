@@ -1,11 +1,13 @@
 import React from 'react';
 import { AboutGridContainer, AboutImageContainer, NoelleImage, AboutInfoContainer,
-  AboutBioContainer, AboutContAndInfoContainer, VIEWCV, ContactInfo, UnderlinedText, UnderlinedLink
+  AboutBioContainer, AboutStatementContainer, AboutContAndInfoContainer,
+  VIEWCV, ContactInfo, UnderlinedText, UnderlinedLink
 } from './AboutStyle';
 import noelle from './Noelle-Headshot.webp';
 import cv from './Noelle-CV.pdf';
 
 import Bio from './Bio';
+import AboutStatement from './AboutStatement';
 
 const About = () => {
 
@@ -19,6 +21,9 @@ const About = () => {
 
   return (
     <AboutGridContainer>
+      <AboutStatementContainer>
+        <AboutStatement />
+      </AboutStatementContainer>
       <AboutImageContainer>
         <NoelleImage src={noelle} alt="Noelle Image" />
       </AboutImageContainer>
