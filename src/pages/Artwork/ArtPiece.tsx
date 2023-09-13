@@ -20,7 +20,6 @@ const ArtPiece: React.FC<ArtPieceProps> = ({ src }) => {
 
   useEffect(() => {
     if(!imageFilename.endsWith('.jpg')) {
-      console.log(imageFilename);
       setIsVideo(true);
     } else {
       setIsVideo(false);
