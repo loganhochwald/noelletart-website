@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 
 const ScrollToTopButtonWrapper = styled.div<{ isVisible: boolean }>`
   position: fixed;
   bottom: 20px;
   right: 20px;
-  opacity: ${(props) => (props.isVisible ? '1' : '0')};
+  opacity: ${(props) => (props.isVisible ? "1" : "0")};
   transition: opacity 0.3s ease-in-out;
   z-index: 999;
 
@@ -14,7 +14,7 @@ const ScrollToTopButtonWrapper = styled.div<{ isVisible: boolean }>`
     background-color: #133e6d;
     color: #fff;
     border: none;
-    cursor: ${(props) => (props.isVisible ? 'pointer' : 'default')};
+    cursor: ${(props) => (props.isVisible ? "pointer" : "default")};
     outline: none;
     border-radius: 5px;
 
@@ -36,23 +36,25 @@ function ScrollToTopButton() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 
   return (
     <ScrollToTopButtonWrapper isVisible={isVisible}>
-      <button className="scroll-to-top-button" onClick={scrollToTop}>⬆</button>
+      <button className="scroll-to-top-button" onClick={scrollToTop}>
+        ⬆
+      </button>
     </ScrollToTopButtonWrapper>
   );
 }

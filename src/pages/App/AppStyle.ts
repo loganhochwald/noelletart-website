@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
   body {
@@ -9,14 +9,14 @@ export const GlobalStyles = createGlobalStyle`
 `;
 
 export const AppContainer = styled.div`
-max-width: 80%;
-margin: auto;
-font-family: 'Consolas', monospace;
-background-color: #fcfcff;
-box-shadow: 0 2px 4px rgb(0 0 0 / 61%);
-min-height: 100vh;
-`
+  max-width: 80%;
+  margin: auto;
+  font-family: "Consolas", monospace;
+  background-color: #fcfcff;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 61%);
+  min-height: 100vh;
+`;
 
 export const RoutesContainer = styled.div`
-margin: 1rem;
-`
+  margin: 1rem;
+`;

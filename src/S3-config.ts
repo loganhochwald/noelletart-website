@@ -29,7 +29,7 @@ const client = new S3Client({
 export const main = async (prefix: string) => {
   const command = new ListObjectsV2Command({
     Bucket: "noelletart",
-    Prefix: prefix
+    Prefix: prefix,
     // The default and maximum number of keys returned is 1000. This limits it to
     // one for demonstration purposes.
     //   MaxKeys: 1,
@@ -45,20 +45,25 @@ export const main = async (prefix: string) => {
 
       // array of objects with title and last modified
       const contentsList = Contents?.map((c) => {
-        if (c.Key?.charAt(c.Key?.length - 1) !== '/' && c.LastModified) {
+        if (c.Key?.charAt(c.Key?.length - 1) !== "/" && c.LastModified) {
           return {
             url: `https://${process.env.S3_BUCKET_NAME}.s3.amazonaws.com/${c.Key}`,
             lastModified: new Date(c.LastModified), // Convert LastModified to a Date object
           };
         } // filter out any undefined or null
-      }).filter((item) => item !== undefined && item !== null) as { url: string; lastModified: Date }[]; // Explicitly specify the type of contentsList
-      
+      }).filter((item) => item !== undefined && item !== null) as {
+        url: string;
+        lastModified: Date;
+      }[]; // Explicitly specify the type of contentsList
+
       // sort the array by Last Modified in descending order (most recent to least recent)
-      contentsList.sort((a, b) => b.lastModified.getTime() - a.lastModified.getTime()); // Use getTime() to compare Date objects
-      
+      contentsList.sort(
+        (a, b) => b.lastModified.getTime() - a.lastModified.getTime(),
+      ); // Use getTime() to compare Date objects
+
       // getting the list of urls only from the sorted contentsList
       const sortedUrls = contentsList.map((item) => item.url);
-            
+
       if (contentsList) {
         contents = sortedUrls;
       }
@@ -72,4 +77,3 @@ export const main = async (prefix: string) => {
     console.error(err);
   }
 };
-

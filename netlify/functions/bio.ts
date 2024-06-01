@@ -3,7 +3,7 @@ const axios = require("axios");
 exports.handler = async () => {
   try {
     const response = await axios.get(
-      "https://noelletart.s3.amazonaws.com/bio.txt"
+      "https://noelletart.s3.amazonaws.com/bio.txt",
     );
 
     return {

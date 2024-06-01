@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const srcDir = path.resolve(__dirname, "src");
 const distDir = path.resolve(__dirname, "dist/client");
@@ -13,14 +13,15 @@ module.exports = {
   output: {
     path: distDir,
     filename: "bundle.js",
-    publicPath: '/',
+    publicPath: "/",
   },
   plugins: [
     new HtmlWebPackPlugin({
       template: path.resolve(srcDir, "index.html"),
       inject: "body",
-      favicon: "./src/favicon.ico"
-    })],
+      favicon: "./src/favicon.ico",
+    }),
+  ],
   module: {
     rules: [
       {
@@ -32,9 +33,9 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|jp2|webp|pdf|txt)$/i,
-        loader: 'file-loader',
+        loader: "file-loader",
         options: {
-          name: '[name].[ext]',
+          name: "[name].[ext]",
         },
       },
     ],

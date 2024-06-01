@@ -1,28 +1,28 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-const breakpoint = '1000px';
+const breakpoint = "1000px";
 
 const AboutGridContainer = styled.div`
-display: flex;
-padding: 2rem;
-padding-top: 0rem;
-max-width: 900px;
-box-sizing: border-box;
-flex-wrap: wrap;
-margin: auto;
-column-gap: 1rem;
-row-gap: 1rem;
+  display: flex;
+  padding: 2rem;
+  padding-top: 0rem;
+  max-width: 900px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  margin: auto;
+  column-gap: 1rem;
+  row-gap: 1rem;
 
-@media (max-width: ${breakpoint}) {
-  flex-direction: column;
-}
+  @media (max-width: ${breakpoint}) {
+    flex-direction: column;
+  }
 `;
 
 const AboutImageContainer = styled.div`
-max-width: 100%;
-height: auto;
-flex: 1;
-display: flex;
+  max-width: 100%;
+  height: auto;
+  flex: 1;
+  display: flex;
 `;
 
 const NoelleImage = styled.img`
@@ -35,33 +35,31 @@ const NoelleImage = styled.img`
 `;
 
 const AboutInfoContainer = styled.div`
-flex: 1;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 const AboutBioContainer = styled.div`
-text-align: justify;
+  text-align: justify;
 `;
 
 const AboutStatementContainer = styled.div`
-text-align: justify;
-margin-bottom: 2rem;
-white-space: pre-line;
+  text-align: justify;
+  margin-bottom: 2rem;
+  white-space: pre-line;
 `;
 
-const AboutContAndInfoContainer = styled.div`
-`;
+const AboutContAndInfoContainer = styled.div``;
 
 const VIEWCV = styled.div`
-text-align: center;
-margin: 2rem;
-cursor: pointer;
+  text-align: center;
+  margin: 2rem;
+  cursor: pointer;
 `;
 
-const ContactInfo = styled.div`
-`;
+const ContactInfo = styled.div``;
 
 const UnderlinedText = styled.span`
   text-decoration: underline;
@@ -71,7 +69,6 @@ const UnderlinedLink = styled.a`
   text-decoration: underline;
   color: black;
 `;
-
 
 export {
   AboutGridContainer,
@@ -85,4 +82,4 @@ export {
   ContactInfo,
   UnderlinedText,
   UnderlinedLink,
-}
+};

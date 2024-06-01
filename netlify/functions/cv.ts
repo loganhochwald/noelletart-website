@@ -1,7 +1,7 @@
 exports.handler = async (event, context) => {
   try {
     const response = await axios.get(
-      "https://noelletart.s3.amazonaws.com/cv/CV.txt"
+      "https://noelletart.s3.amazonaws.com/cv/CV.txt",
     );
 
     return {

@@ -3,7 +3,7 @@ import axios from "axios";
 import { useLocation } from "react-router-dom";
 
 import ArtPiece from "./ArtPiece";
-import { ArtGridContainer } from './ArtworkStyle';
+import { ArtGridContainer } from "./ArtworkStyle";
 import { LoaderContainer, Loader } from "../../Global/Header/HeaderStyle";
 
 const Artwork = () => {
@@ -13,16 +13,16 @@ const Artwork = () => {
   const [fetching, setFetching] = useState<boolean>(true);
 
   useEffect(() => {
-
     let endpoint = location.pathname;
 
-    if(endpoint === '/') {
-      endpoint = 'recent';
+    if (endpoint === "/") {
+      endpoint = "recent";
     }
 
-    axios.get(`/.netlify/functions/${ endpoint }`)
+    axios
+      .get(`/.netlify/functions/${endpoint}`)
       .then((response) => {
-        if(Array.isArray(response.data)) {
+        if (Array.isArray(response.data)) {
           setPictures(response.data);
           setFetching(false);
         }
@@ -30,23 +30,25 @@ const Artwork = () => {
       .catch((error) => {
         console.error("Could not get S3 Images", error);
         setFetching(false);
-      })
-  }, [location])  
-
+      });
+  }, [location]);
 
   return (
     <>
       {fetching ? (
-        <LoaderContainer><Loader /></LoaderContainer>
+        <LoaderContainer>
+          <Loader />
+        </LoaderContainer>
       ) : (
         <ArtGridContainer>
-          {pictures.length !== 0 && pictures.map((picture, index) => (
-            <ArtPiece key={index} src={picture} />
-          ))}
+          {pictures.length !== 0 &&
+            pictures.map((picture, index) => (
+              <ArtPiece key={index} src={picture} />
+            ))}
         </ArtGridContainer>
       )}
     </>
-  );  
+  );
 };
 
 export default Artwork;

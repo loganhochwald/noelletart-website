@@ -1,12 +1,12 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const ArtZoomedContainer = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-padding: 2rem;
-max-width: 900px;
-margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
 `;
 
 export const ArtZoomedImage = styled.img`
@@ -16,7 +16,7 @@ export const ArtZoomedImage = styled.img`
 `;
 
 export const ArtZoomedTitle = styled.h2`
-text-align: center;
+  text-align: center;
 `;
 
 export const ReturnButton = styled.button`
@@ -27,7 +27,7 @@ export const ReturnButton = styled.button`
   background-color: #133e6d;
   color: #fff;
   border: none;
-  cursor: 'pointer';
+  cursor: "pointer";
   outline: none;
   border-radius: 5px;
 

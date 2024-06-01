@@ -3,10 +3,10 @@ const axios = require("axios");
 exports.handler = async () => {
   try {
     const response = await axios.get(
-      "https://noelletart.s3.amazonaws.com/about.txt"
+      "https://noelletart.s3.amazonaws.com/about.txt",
     );
 
-    const modifiedData = response.data.replace(/\$/g, '\n');
+    const modifiedData = response.data.replace(/\$/g, "\n");
 
     return {
       statusCode: 200,

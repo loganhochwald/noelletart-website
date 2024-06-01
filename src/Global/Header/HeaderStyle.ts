@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from "styled-components";
 
 export const HeaderWrapper = styled.header`
   display: flex;
@@ -12,7 +12,7 @@ export const HeaderWrapper = styled.header`
 export const HeaderTitle = styled.h1`
   margin: 0 1rem;
   font-size: 4rem;
-  font-family: 'Consolas', monospace;
+  font-family: "Consolas", monospace;
   cursor: default;
   text-align: center;
   margin-bottom: 1rem;
@@ -33,19 +33,19 @@ export const LinkItem = styled.h3`
   text-align: center;
 
   &:hover {
-    color:#006e90;
+    color: #006e90;
     transition: all 0.3s ease;
   }
 `;
 
 export const CurrentLinkItem = styled.h3`
-font-weight: bold;
-cursor: pointer;
-text-decoration: underline;
-margin: 1rem;
-text-align: center;
-color: #006e90;
-`
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: underline;
+  margin: 1rem;
+  text-align: center;
+  color: #006e90;
+`;
 
 const rotateAnimation = keyframes`
   0% {
@@ -67,9 +67,9 @@ const rotateAnimation = keyframes`
 `;
 
 export const LoaderContainer = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Loader = styled.div`

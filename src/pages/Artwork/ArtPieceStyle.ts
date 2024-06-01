@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const ArtPieceContainer = styled.div`
   display: flex;
@@ -17,10 +17,10 @@ export const ArtPieceImage = styled.img`
 `;
 
 export const ArtPieceTitle = styled.p`
-margin-top: 1.5rem;
-margin-bottom: 0rem;
-text-align: center;
-`
+  margin-top: 1.5rem;
+  margin-bottom: 0rem;
+  text-align: center;
+`;
 export const ArtPieceVideo = styled.video`
   max-width: 100%;
   height: auto;
