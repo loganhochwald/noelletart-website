@@ -43,8 +43,9 @@ const ArtPiece: React.FC<ArtPieceProps> = ({ src }) => {
         <ArtPieceVideo src={src} controls></ArtPieceVideo>
       ) : (
         <ArtPieceImage
+          loading='lazy'
           src={src}
-          alt="Artwork Image"
+          alt='Artwork Image'
           onClick={() => zoomIn(src)}
         />
       )}

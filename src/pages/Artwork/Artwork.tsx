@@ -13,6 +13,8 @@ const Artwork = () => {
   const [fetching, setFetching] = useState<boolean>(true);
 
   useEffect(() => {
+    setFetching(true);
+    setPictures([]);
     const endpoint = location.pathname === "/" ? "/recent" : location.pathname;
 
     // check if the pictures are in session storage (every time the website is opened)

@@ -4,7 +4,6 @@ export const ArtPieceContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1rem;
   justify-content: flex-end;
   padding: 0.5rem;
 `;
