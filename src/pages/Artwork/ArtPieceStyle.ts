@@ -4,9 +4,9 @@ export const ArtPieceContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
   margin: 1rem;
   justify-content: flex-end;
+  padding: 0.5rem;
 `;
 
 export const ArtPieceImage = styled.img`
