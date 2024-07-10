@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 import ArtPiece from "./ArtPiece";
 import { ArtGridContainer } from "./ArtworkStyle";
 import { LoaderContainer, Loader } from "../../Global/Header/HeaderStyle";
+import Carousel from './Carousel'
 
 const Artwork = () => {
   const location = useLocation();
@@ -51,12 +52,13 @@ const Artwork = () => {
 
   return (
     <>
-        <ArtGridContainer>
-          {pictures.length !== 0 &&
-            pictures.map((picture, index) => (
-              <ArtPiece key={index} src={picture} />
-            ))}
-        </ArtGridContainer>
+        {/* <ArtGridContainer> */}
+          {/* {pictures.length !== 0 &&
+            pictures.map((picture, index) => ( */}
+              <Carousel pictures={pictures} />
+              {/* // <ArtPiece key={index} src={picture} />
+            ))} */}
+        {/* </ArtGridContainer> */}
     </>
   );
 };

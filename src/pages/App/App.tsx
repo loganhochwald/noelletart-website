@@ -23,7 +23,7 @@ const App = () => {
         </RightItem>
       </Top>
       <Center>
-      {/* <RoutesContainer>
+      {/* <RoutesContainer> */}
           <Routes>
             <Route path="/" element={<Artwork />} />
             <Route path="/live-paintings" element={<Artwork />} />
@@ -32,7 +32,7 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/artpiece/:imageUrl" element={<ArtZoomed />} />
           </Routes>
-        </RoutesContainer> */}
+        {/* </RoutesContainer> */}
       </Center>
       <Bottom>
         <LeftItem>Tollett</LeftItem>

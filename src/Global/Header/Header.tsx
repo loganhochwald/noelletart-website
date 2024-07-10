@@ -20,9 +20,7 @@ const Header = () => {
 
   // THIS IS SUCH UGLY CODE BUT IM ON SUCH A TIME CRUNCH
   return (
-    <HeaderWrapper>
-      <HeaderTitle>Noelle T. Art</HeaderTitle>
-      <LinksWrapper>
+<>
         {location.pathname === "/" ? (
           <CurrentLinkItem key="rec" onClick={() => navigateTo("/")}>
             RECENT
@@ -51,8 +49,7 @@ const Header = () => {
             </LinkItem>
           );
         })}
-      </LinksWrapper>
-    </HeaderWrapper>
+</>
   );
 };
 

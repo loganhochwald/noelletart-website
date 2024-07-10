@@ -55,6 +55,7 @@ export const RightItem = styled.div`
 export const Center = styled(Section)`
   background-color: white;
   flex: 2;
+  height: 45%;
 `;
 
 export const Bottom = styled(Section)`
