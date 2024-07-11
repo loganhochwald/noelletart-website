@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -96,6 +97,19 @@ const isVideo = (src: string) => {
 }
 
 const Carousel: React.FC<CarouselProps> = ({ pictures }) => {
+
+  const navigate = useNavigate();
+
+  const zoomIn = (picture: string, imageTitle: string) => {
+    navigate(`/artpiece/${imageTitle}`, {
+      state: {
+        pictureURL: picture,
+        title: imageTitle,
+        endpoint: window.location.pathname,
+      },
+    });
+  };
+
   return (
     <>
       <Swiper
@@ -127,7 +141,7 @@ const Carousel: React.FC<CarouselProps> = ({ pictures }) => {
       >
         {pictures.map((picture, index) => (
           <SwiperSlide key={index}>
-            <ImageContainer $img={picture}>
+            <ImageContainer $img={picture} onClick={() => zoomIn(picture, getTitle(picture))}>
               {isVideo(picture) ? (
                 <video controls>
                   <source src={picture} type="video/mp4" />
