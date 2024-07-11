@@ -1,8 +1,11 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { AppContainer, RoutesContainer, GlobalStyles, Container, Top, Center, Bottom, Section, LeftItem, RightItem, Navigation } from "./AppStyle";
+import { EmailOutline } from "@styled-icons/evaicons-outline";
+import { Instagram } from "@styled-icons/boxicons-logos";
 
 import Header from "../../Global/Header/Header";
+import AboutLink from "../../Global/Header/AboutLink";
 import Artwork from "../Artwork/Artwork";
 import About from "../About/About";
 import ArtZoomed from "../Artwork/ArtZoomed";
@@ -36,7 +39,11 @@ const App = () => {
       </Center>
       <Bottom>
         <LeftItem>Tollett</LeftItem>
-        <RightItem />
+        <RightItem>
+          <AboutLink />
+          <EmailOutline size={25} />
+          <Instagram size={25}/>
+        </RightItem>
       </Bottom>
     </Container>
   </>

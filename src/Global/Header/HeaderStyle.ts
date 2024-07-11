@@ -25,26 +25,51 @@ export const LinksWrapper = styled.div`
   justify-content: center;
 `;
 
-export const LinkItem = styled.h3`
-  font-weight: bold;
+export const LinkItem = styled.h4`
+ font-weight: bold;
   cursor: pointer;
-  text-decoration: underline;
+  text-decoration: none;
   margin: 1rem;
   text-align: center;
+  position: relative;
 
-  &:hover {
-    color: #006e90;
-    transition: all 0.3s ease;
+  &:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #006e90;
+    bottom: -4px;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
   }
 `;
 
-export const CurrentLinkItem = styled.h3`
+export const CurrentLinkItem = styled.h4`
   font-weight: bold;
   cursor: pointer;
-  text-decoration: underline;
+  text-decoration: none;
   margin: 1rem;
   text-align: center;
+  position: relative;
   color: #006e90;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #006e90;
+    bottom: -4px;
+    left: 0;
+  }
 `;
 
 const rotateAnimation = keyframes`

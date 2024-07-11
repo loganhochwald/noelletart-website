@@ -1,8 +1,5 @@
 import React from "react";
 import {
-  HeaderWrapper,
-  HeaderTitle,
-  LinksWrapper,
   LinkItem,
   CurrentLinkItem,
 } from "./HeaderStyle";
@@ -16,7 +13,7 @@ const Header = () => {
     navigate(endpoint);
   };
 
-  const menuLinks = ["LIVE PAINTINGS", "ABSTRACTS", "SET PIECES", "ABOUT"];
+  const menuLinks = ["LIVE PAINTINGS", "ABSTRACTS", "SET PIECES"];
 
   // THIS IS SUCH UGLY CODE BUT IM ON SUCH A TIME CRUNCH
   return (

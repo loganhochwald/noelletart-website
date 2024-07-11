@@ -4,13 +4,13 @@ export const GlobalStyles = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
+    font-family: "Consolas", monospace;
   }
 `;
 
 export const AppContainer = styled.div`
   max-width: 80%;
   margin: auto;
-  font-family: "Consolas", monospace;
   background-color: #fcfcff;
   box-shadow: 0 2px 4px rgb(0 0 0 / 61%);
   min-height: 100vh;
