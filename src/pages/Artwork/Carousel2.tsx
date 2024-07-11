@@ -1,17 +1,11 @@
-import { useRef, useEffect } from 'react';
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 import './styles.css';
 import styled from 'styled-components';
-
-// import required modules
-import { Pagination } from 'swiper/modules';
 import React from 'react';
 
 
@@ -26,11 +20,14 @@ type CarouselProps = {
   const ImageContainer = styled.div<ImageContainerProps>`
     width: 100%;
     height: 100%;
-  background-image: url('${props => props.$img}');
-  background-size: cover;
-  background-position: center;
-  border-radius: 10px; // Optional: to add some border-radius to the div
-
+    background-image: url('${props => props.$img}');
+    background-size: contain;
+    background-position: center;
+    border-radius: 10px;
+    object-fit: contain;
+    background-repeat: no-repeat;
+    background-color: lightgrey;
+    border: lightgrey 5px solid;
   `
 
   const Carousel: React.FC<CarouselProps> = ({ pictures }) => {
@@ -38,8 +35,8 @@ type CarouselProps = {
   return (
     <>
     <Swiper
-      slidesPerView={'auto'}
-      spaceBetween={20}
+      slidesPerView={1}
+      spaceBetween={10}
       loop={true}
       className="mySwiper"
       breakpoints={{
@@ -48,8 +45,12 @@ type CarouselProps = {
           spaceBetween: 20,
         },
         768: {
-          slidesPerView: 3,
-          spaceBetween: 30,
+          slidesPerView: 4,
+          spaceBetween: 40,
+        },
+        1024: {
+          slidesPerView: 5,
+          spaceBetween: 50,
         },
       }}
     >
