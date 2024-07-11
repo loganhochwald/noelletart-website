@@ -27,13 +27,11 @@ const fadeIn = keyframes`
   }
 `;
 
+
 const ImageContainer = styled.div<ImageContainerProps>`
   position: relative;
   width: 100%;
   height: 100%;
-  background-image: url('${props => props.$img}');
-  background-size: cover;
-  background-position: center;
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.3s ease;
@@ -45,6 +43,13 @@ const ImageContainer = styled.div<ImageContainerProps>`
 
   &:hover .overlay {
     animation: ${fadeIn} 0.3s ease forwards;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
   }
 `;
 
@@ -66,8 +71,8 @@ const Overlay = styled.div`
   user-select: none;
 
   @media (max-width: 640px) {
-    top: 50%; /* Show overlay at 50% from the top */
-    opacity: 1; /* Make overlay always visible */
+    top: 50%;
+    opacity: 1;
   }
 `;
 
@@ -105,6 +110,7 @@ const Carousel: React.FC<CarouselProps> = ({ pictures }) => {
         {pictures.map((picture, index) => (
           <SwiperSlide key={index}>
             <ImageContainer $img={picture}>
+              <img src={picture} alt={`Slide ${index}`} loading="lazy" />
               <Overlay className="overlay">{getTitle(picture)}</Overlay>
             </ImageContainer>
           </SwiperSlide>
