@@ -45,6 +45,7 @@ export const LeftItem = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 9em;
+  user-select: none;
 `;
 
 export const RightItem = styled.div`

@@ -26,7 +26,7 @@ type CarouselProps = {
     border-radius: 10px;
     object-fit: contain;
     background-repeat: no-repeat;
-    background-color: lightgrey;
+    background-color: #006e908f;
     border: lightgrey 5px solid;
   `
 
