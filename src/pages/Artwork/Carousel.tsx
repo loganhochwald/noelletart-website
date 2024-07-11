@@ -3,8 +3,8 @@ import React from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+
+import { Autoplay, FreeMode } from 'swiper/modules';
 
 import './styles.css';
 
@@ -64,6 +64,11 @@ const Overlay = styled.div`
   opacity: 0;
   transition: opacity 0.3s ease;
   user-select: none;
+
+  @media (max-width: 640px) {
+    top: 50%; /* Show overlay at 50% from the top */
+    opacity: 1; /* Make overlay always visible */
+  }
 `;
 
 const getTitle = (src: string) => {
@@ -76,13 +81,20 @@ const Carousel: React.FC<CarouselProps> = ({ pictures }) => {
     <>
       <Swiper
         slidesPerView={'auto'}
+        freeMode={true}
         spaceBetween={20}
         loop={true}
         className="mySwiper"
+        modules={[Autoplay, FreeMode]}
+        autoplay={window.innerWidth <= 640 ? {
+          delay: 2000,
+          disableOnInteraction: false,
+        } : false}
         breakpoints={{
           640: {
             slidesPerView: 2,
             spaceBetween: 20,
+            effect: 'fade'
           },
           768: {
             slidesPerView: 3,
