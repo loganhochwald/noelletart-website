@@ -45,6 +45,14 @@ const ImageContainer = styled.div<ImageContainerProps>`
     animation: ${fadeIn} 0.3s ease forwards;
   }
 
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+  }
+
+  /* Reset styles for images */
   img {
     width: 100%;
     height: 100%;
@@ -52,6 +60,7 @@ const ImageContainer = styled.div<ImageContainerProps>`
     border-radius: inherit;
   }
 `;
+
 
 const Overlay = styled.div`
   position: absolute;
@@ -81,6 +90,11 @@ const getTitle = (src: string) => {
   return imageFilename.replace(/\.[^.]+$/, "");
 }
 
+const isVideo = (src: string) => {
+  const imageFileName = src.split("/").pop() || "";
+  return !imageFileName.endsWith(".jpg");
+}
+
 const Carousel: React.FC<CarouselProps> = ({ pictures }) => {
   return (
     <>
@@ -91,15 +105,19 @@ const Carousel: React.FC<CarouselProps> = ({ pictures }) => {
         loop={true}
         className="mySwiper"
         modules={[Autoplay, FreeMode]}
-        autoplay={window.innerWidth <= 640 ? {
-          delay: 2000,
-          disableOnInteraction: false,
-        } : false}
+        autoplay={
+          window.innerWidth <= 640
+            ? {
+                delay: 2000,
+                disableOnInteraction: false,
+              }
+            : false
+        }
         breakpoints={{
           640: {
             slidesPerView: 2,
             spaceBetween: 20,
-            effect: 'fade'
+            effect: 'fade',
           },
           768: {
             slidesPerView: 3,
@@ -110,7 +128,14 @@ const Carousel: React.FC<CarouselProps> = ({ pictures }) => {
         {pictures.map((picture, index) => (
           <SwiperSlide key={index}>
             <ImageContainer $img={picture}>
-              <img src={picture} alt={`Slide ${index}`} loading="lazy" />
+              {isVideo(picture) ? (
+                <video controls>
+                  <source src={picture} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              ) : (
+                <img src={picture} alt={`Slide ${index}`} loading="lazy" />
+              )}
               <Overlay className="overlay">{getTitle(picture)}</Overlay>
             </ImageContainer>
           </SwiperSlide>
